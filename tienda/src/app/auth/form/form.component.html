@@ -1,0 +1,47 @@
+<form>
+  <p>
+    <mat-form-field class="full-width">
+      <input
+        matInput
+        #email
+        placeholder="Email"
+        [formControl]="emailFormControl"
+        [errorStateMatcher]="matcher"
+        autocomplete="off"
+      >
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Introduce un email correcto
+      </mat-error>
+
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email es <strong>requerido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input
+        matInput
+        #password
+        placeholder="Password"
+        type="password"
+        [formControl]="passwordFormControl"
+        [errorStateMatcher]="matcher"
+        autocomplete="off"
+      >
+      <mat-error *ngIf="passwordFormControl.hasError('required')">
+        Password es <strong>requerido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      style="margin-top: 10px"
+      (click)="submit(email, password)"
+      class="full-width"
+      type="submit"
+      mat-raised-button
+      color="primary"
+    >
+      {{ btnText }}
+    </button>
+  </p>
+</form>

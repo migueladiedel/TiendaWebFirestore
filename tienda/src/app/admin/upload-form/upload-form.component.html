@@ -1,0 +1,20 @@
+<div style="margin: 5% 15%">
+  <div *ngIf="currentFileUploaded" style="width: 350px">
+    <p>{{ progress.percentage}}%</p>
+
+    <mat-progress-bar
+      [color]="primary"
+      [mode]="buffer"
+      [value]="progress.percentage"
+      [bufferValue]="progress.percentage"
+    >
+    </mat-progress-bar>
+  </div>
+
+  <br />
+
+  <input type="file" (change)="selectFile($event)" />
+
+  <button mat-raised-button color="accent" [disabled]="!selecteFiles" (click)="upload()">Subir archivo</button>
+
+</div>

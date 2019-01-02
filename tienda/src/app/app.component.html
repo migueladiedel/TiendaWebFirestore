@@ -1,0 +1,3 @@
+<app-navigation></app-navigation>
+<mat-spinner *ngIf="appService.loading$ | async"></mat-spinner>
+<router-outlet *ngIf="(appService.loading$ | async) == false"></router-outlet>

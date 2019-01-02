@@ -1,0 +1,35 @@
+<mat-tab-group *ngIf="auth.user | async as user">
+  <mat-tab label="Formulario producto" *ngIf="user.role === 'admin' || user.role === 'editor'">
+    <div>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nombre" [(ngModel)]="data.name" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Precio" [(ngModel)]="data.price" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+       <textarea matInput placeholder="Descripción" [(ngModel)]="data.description"></textarea>
+      </mat-form-field>
+
+      <br />
+
+      <button mat-raised-button color="accent" (click)="saveProduct()">Guardar</button>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Adjuntar archivos" *ngIf="user.role === 'admin' && data.id">
+    <div style="min-height: 200px">
+
+      <app-upload-form [id]="data.id"></app-upload-form>
+
+      <mat-grid-list cols="2">
+        <mat-grid-tile *ngFor="let upload of uploads | async">
+          <img width="150" [src]="upload.url" [alt]="upload.name" />
+          <button mat-raised-button color="warn" (click)="removeUpload(upload)">Eliminar</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-tab>
+</mat-tab-group>

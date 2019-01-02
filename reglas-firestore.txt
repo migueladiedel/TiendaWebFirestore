@@ -1,0 +1,46 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+    	return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    function isEditor() {
+    	return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'editor';
+    }
+
+    function isCustomer() {
+    	return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'customer';
+    }
+
+    function isOwner() {
+    	return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.uid == request.auth.uid;
+    }
+
+    match /users/{document} {
+    	allow read, create;
+      allow update: if isAdmin() == true || isOwner() == true;
+      allow delete: if isAdmin() == true;
+    }
+
+    match /products/{document} {
+    	allow read;
+      allow create, update: if isAdmin() == true || isEditor() == true;
+      allow delete: if isAdmin() == true;
+
+      match /{allChildren=**} {
+      	allow read;
+        allow create, delete: if isAdmin() == true;
+      }
+    }
+
+    match /carts/{document} {
+    	allow read;
+      allow create, update, delete: if isCustomer() == true;
+    }
+
+    match /orders/{document} {
+    	allow read;
+      allow create: if isCustomer() == true;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<mat-card style="width: 60%; margin: 40px auto">
+  <mat-toolbar color="warn">Registro con Firebase</mat-toolbar>
+  <mat-card-content>
+    <app-auth-form (onSubmit)="signUp($event)" [btnText]="'Registro con email y password'"></app-auth-form>
+  </mat-card-content>
+</mat-card>

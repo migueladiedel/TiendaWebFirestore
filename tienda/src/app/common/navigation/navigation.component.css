@@ -1,0 +1,10 @@
+mat-toolbar-row a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+mat-toolbar-row .active {
+  text-decoration: underline;
+}

@@ -1,0 +1,26 @@
+<mat-card *ngIf="product | async as p">
+  <ngx-slick class="carousel" #slickModal [config]="slideConfig" *ngIf="slides.length">
+    <div ngxSlickItem *ngFor="let slide of slides">
+      <img src="{{ slide.img }}" width="40%" style="margin: 0 auto" />
+    </div>
+  </ngx-slick>
+
+  <img height="500px" *ngIf="!slides.length" mat-card-image src="http://fakeimg.pl/350x250/?text=Sin imagen">
+
+  <mat-card-title>{{ p.name }}</mat-card-title>
+  <mat-card-content>
+    <p>{{ p.description}}</p>
+    <p>{{ p.price }}€</p>
+  </mat-card-content>
+  <mat-card-actions *ngIf="auth.user | async as user">
+    <button
+      *ngIf="user.role === 'customer'"
+      style="margin-top: 10px; margin-left: 5px"
+      class="full-width"
+      (click)="cartService.addProduct(p)"
+      mat-raised-button color="primary"
+    > Añadir a la cesta
+    </button>
+  </mat-card-actions>
+
+</mat-card>

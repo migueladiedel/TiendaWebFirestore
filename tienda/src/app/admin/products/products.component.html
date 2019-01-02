@@ -1,0 +1,47 @@
+<button mat-raised-button color="accent" (click)="addProduct()">Añadir producto</button>
+
+<div class="mat-elevation-z8">
+  <div>
+    <mat-form-field class="full-width">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar la tabla" />
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource" matSort [trackBy]="trackById" class="animate">
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Precio </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.price }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.description }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef> Editar </mat-header-cell>
+      <mat-cell *matCellDef="let product">
+        <button mat-raised-button  color="primary" (click)="openDialog(product)">Edit</button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>
+      <mat-cell *matCellDef="let product">
+        <div *ngIf="auth.user | async as user">
+          <button mat-raised-button *ngIf="user.role === 'admin'" color="warn" (click)="remove(product)">Delete</button>
+          <p *ngIf="user.role !== 'admin'">No tienes permisos</p>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
+  </mat-table>
+</div>
