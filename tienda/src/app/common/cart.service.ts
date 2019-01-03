@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {AuthService} from "@auth/auth.service";
 import {AngularFirestore} from "angularfire2/firestore";
 import {Cart} from "../models/cart";
 import {Product} from "../models/product";
+import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class CartService {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "@auth/auth.service";
-import {CartService} from "@common/cart.service";
+import { AuthService } from '../../auth/auth.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-navigation',

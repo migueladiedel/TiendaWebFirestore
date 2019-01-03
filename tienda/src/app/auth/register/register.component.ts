@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "@auth/auth.service";
 import {AngularFirestore} from "angularfire2/firestore";
-import {SnackService} from "@common/snack.service";
 import {Title} from "@angular/platform-browser";
 import {Router} from "@angular/router";
-import {AppService} from "@common/app.service";
+import { AuthService } from '../auth.service';
+import { SnackService } from '../../common/snack.service';
+import { AppService } from '../../common/app.service';
+
 
 @Component({
   selector: 'app-register',

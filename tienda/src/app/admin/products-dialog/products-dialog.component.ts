@@ -1,12 +1,12 @@
 import {Component, Inject} from '@angular/core';
-import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {AngularFirestore} from 'angularfire2/firestore';
-import {AuthService} from "@auth/auth.service";
-import {ProductsService} from "@common/products.service";
-import {SnackService} from "@common/snack.service";
 import {Product} from "../../models/product";
 import {Upload} from "../../models/upload";
-import {UploadService} from "@admin/upload.service";
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { AuthService } from '../../auth/auth.service';
+import { SnackService } from '../../common/snack.service';
+import { ProductsService } from '../../common/products.service';
+import { UploadService } from '../upload.service';
 
 @Component({
   selector: 'app-products-dialog',

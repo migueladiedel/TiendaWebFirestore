@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import {AuthService} from "@auth/auth.service";
 import {Router} from "@angular/router";
-import {SnackService} from "@common/snack.service";
-import {AppService} from "@common/app.service";
+import { AuthService } from '../auth.service';
+import { SnackService } from '../../common/snack.service';
+import { AppService } from '../../common/app.service';
+
 
 export class Auth {
   constructor(

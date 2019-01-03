@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UploadService} from '@admin/upload.service';
 import {Upload} from '../../models/upload';
+import { UploadService } from '../upload.service';
 
 @Component({
   selector: 'app-upload-form',

@@ -7,12 +7,13 @@ import { AppComponent } from './app.component';
 import {AngularFireModule} from "angularfire2";
 import {environment} from "../environments/environment";
 import {AngularFirestoreModule} from "angularfire2/firestore";
-import {SharedModule} from "@shared/shared.module";
-import { AuthModule } from '@auth/auth.module';
-import { NavigationComponent } from '@common/navigation/navigation.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {AdminModule} from "@admin/admin.module";
-import {ShopModule} from "@shop/shop.module";
+import { AdminModule } from './admin/admin.module';
+import { ShopModule } from './shop/shop.module';
+import { NavigationComponent } from './common/navigation/navigation.component';
+import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
+
 
 @NgModule({
   declarations: [

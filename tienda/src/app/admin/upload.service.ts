@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import * as firebase from 'firebase';
 import {Upload} from '../models/upload';
 import {AngularFirestore} from "angularfire2/firestore";
 import * as faker from 'faker';
+import * as firebase from "firebase";
 
 @Injectable()
 export class UploadService {
