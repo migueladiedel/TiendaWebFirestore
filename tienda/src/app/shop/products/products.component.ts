@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "@auth/auth.service";
+
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/combineLatest';
-import {CartService} from "@common/cart.service";
-import {ProductsService} from "@common/products.service";
+
 import {Product} from "../../models/product";
-import {AppService} from "@common/app.service";
-import {SnackService} from "@common/snack.service";
+import { ProductsService } from '../../common/products.service';
+import { AuthService } from '../../auth/auth.service';
+import { CartService } from '../../common/cart.service';
+import { AppService } from '../../common/app.service';
+import { SnackService } from '../../common/snack.service';
 
 @Component({
   selector: 'app-products',
@@ -29,7 +31,7 @@ export class ProductsComponent implements OnInit {
     this.products = this.productService.products().snapshotChanges().map(productSnaps => {
       return productSnaps.map(product => {
         const productData = product.payload.doc.data();
-        const productId = product.payload.doc.id;
+        const productId = "1"; //product.payload.doc.data;
         return this.productService.getProductImages(productId).snapshotChanges().map(uploadSnap => {
           let number = 0;
           return uploadSnap.map(upload => {

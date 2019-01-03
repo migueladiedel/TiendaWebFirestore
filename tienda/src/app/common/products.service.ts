@@ -41,39 +41,39 @@ export class ProductsService {
     return this.afs.doc<Product>(`products/${productId}`).collection('uploads');
   }
 
-  remove(id): Promise<any> {
-    let ref = this.product(id);
-    return new Promise((resolve, reject) => {
-      this.deleteUploadsCollection(`products/${id}/uploads`, 1).subscribe(() => {
-        ref.delete().then(() => {
-          resolve(true);
-        }).catch(error => {
-          reject(error);
-        })
-      })
-    })
-  }
+  // remove(id): Promise<any> {
+  //   let ref = this.product(id);
+  //   return new Promise((resolve, reject) => {
+  //     this.deleteUploadsCollection(`products/${id}/uploads`, 1).subscribe(() => {
+  //       ref.delete().then(() => {
+  //         resolve(true);
+  //       }).catch(error => {
+  //         reject(error);
+  //       })
+  //     })
+  //   })
+  // }
 
-  private deleteUploadsCollection(path: string, limit: number): Observable<any> {
-    const source = this.deleteBatch(path, limit)
-    return source.pipe(
-      expand(val => this.deleteBatch(path, limit)),
-      takeWhile(val => val > 0)
-    )
-  }
+  // private deleteUploadsCollection(path: string, limit: number): Observable<any> {
+  //   const source = this.deleteBatch(path, limit)
+  //   return source.pipe(
+  //     expand(val => this.deleteBatch(path, limit)),
+  //     takeWhile(val => val > 0)
+  //   )
+  // }
 
-  private deleteBatch(path: string, limit: number): Observable<any> {
-    const ref = this.afs.collection(path, ref => ref.orderBy('__name__').limit(limit));
-    return ref.snapshotChanges().pipe(
-      take(1),
-      mergeMap(snapshot => {
-        const batch = this.afs.firestore.batch();
-        snapshot.forEach(doc => {
-          this.uploadService.removeFile(doc.payload.doc.id);
-          batch.delete(doc.payload.doc.ref);
-        });
-        return fromPromise(batch.commit()).map(() => snapshot.length)
-      })
-    )
-  }
+  // private deleteBatch(path: string, limit: number): Observable<any> {
+  //   const ref = this.afs.collection(path, ref => ref.orderBy('__name__').limit(limit));
+  //   return ref.snapshotChanges().pipe(
+  //     take(1),
+  //     mergeMap(snapshot => {
+  //       const batch = this.afs.firestore.batch();
+  //       snapshot.forEach(doc => {
+  //         this.uploadService.removeFile(doc.payload.doc.id);
+  //         batch.delete(doc.payload.doc.ref);
+  //       });
+  //       return fromPromise(batch.commit()).map(() => snapshot.length)
+  //     })
+  //   )
+  // }
 }

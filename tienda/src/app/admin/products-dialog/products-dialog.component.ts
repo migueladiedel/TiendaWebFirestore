@@ -30,7 +30,7 @@ export class ProductsDialogComponent {
       this.uploads = this.productService.product(this.data.id).collection('uploads').snapshotChanges().map(actions => {
         return actions.map(upload => {
           const data = upload.payload.doc.data();
-          const id = upload.payload.doc.id;
+          const id = upload.payload.doc.data;
           return {id, ...data};
         })
       })

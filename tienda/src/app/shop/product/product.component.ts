@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {ProductsService} from "@common/products.service";
 import {Upload} from "../../models/upload";
-import {AuthService} from "@auth/auth.service";
-import {CartService} from "@common/cart.service";
+import { ProductsService } from '../../common/products.service';
+import { AuthService } from '../../auth/auth.service';
+import { CartService } from '../../common/cart.service';
+
 
 @Component({
   selector: 'app-product',
