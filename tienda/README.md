@@ -15,3 +15,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 `ng g service common/snack --m shared`
 
 `ng g component auth/form --m auth`
+
+`ng g component auth/register --module auth`
