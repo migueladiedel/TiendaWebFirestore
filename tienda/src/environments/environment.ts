@@ -6,6 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-
+    apiKey: "AIzaSyBhbrpUjlbiNkZCqvyB66_peAcTyyLR65o",
+    authDomain: "tiendawebfirestore.firebaseapp.com",
+    databaseURL: "https://tiendawebfirestore.firebaseio.com",
+    projectId: "tiendawebfirestore",
+    storageBucket: "tiendawebfirestore.appspot.com",
+    messagingSenderId: "230010823520"
   }
 };
