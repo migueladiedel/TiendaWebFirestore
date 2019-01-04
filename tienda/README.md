@@ -8,3 +8,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ng g module auth --routing --module=app
 ng g service auth/auth --m auth
+ng g component common/navigation --module app
+ng g service common/snack --m shared
+ng g component auth/form --m auth
