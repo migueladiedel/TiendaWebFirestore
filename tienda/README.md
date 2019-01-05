@@ -39,3 +39,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 `ng g component admin/upload-form --admin`
 
 `ng g module shop --routing`
+
+`ng g class models/cart`
