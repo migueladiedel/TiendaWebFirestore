@@ -31,7 +31,7 @@ export class ProductsComponent implements OnInit {
     this.products = this.productService.products().snapshotChanges().map(productSnaps => {
       return productSnaps.map(product => {
         const productData = product.payload.doc.data();
-        const productId = "1"; //product.payload.doc.data;
+        const productId = product.payload.doc.id;
         return this.productService.getProductImages(productId).snapshotChanges().map(uploadSnap => {
           let number = 0;
           return uploadSnap.map(upload => {
