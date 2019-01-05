@@ -21,7 +21,7 @@ export class ProductsDialogComponent {
   constructor(
     private afs: AngularFirestore,
     public dialogRef: MatDialogRef<ProductsDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Product,
+    @Inject( MAT_DIALOG_DATA ) public data: Product,
     private snackService: SnackService,
     public auth: AuthService,
     private productService: ProductsService,
