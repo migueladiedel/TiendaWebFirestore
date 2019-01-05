@@ -27,3 +27,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 `ng g component admin/admin --m admin`
 
 `ng g service common/products --m shared`
+
+`ng g component admin/products-dialog --m admin`
