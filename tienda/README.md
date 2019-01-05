@@ -19,3 +19,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 `ng g component auth/register --module auth`
 
 `ng g component auth/login --module auth`
+
+`ng g guard auth/auth --module auth`
