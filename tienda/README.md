@@ -43,3 +43,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 `ng g class models/cart`
 
 `ng g service common/cart --m shared`
+
+`ng g component shop/products --m shop`
