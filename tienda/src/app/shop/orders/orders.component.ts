@@ -1,9 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
 import {MatSort, MatTableDataSource} from "@angular/material";
-import { OrdersService } from '../../common/orders.service';
-import { SnackService } from '../../common/snack.service';
-import { AuthService } from '../../auth/auth.service';
-import { Order } from '../../models/order';
+
+import { OrdersService } from '@common/orders.service';
+import { SnackService } from '@common/snack.service';
+import { AuthService } from '@auth/auth.service';
+import { Order } from '@models/order';
 
 @Component({
   selector: 'app-orders',

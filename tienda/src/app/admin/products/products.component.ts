@@ -1,10 +1,11 @@
-import {Component, ViewChild} from '@angular/core';
-import {MatDialog, MatDialogConfig, MatSort, MatTableDataSource} from "@angular/material";
-import {Product} from "../../models/product";
-import { ProductsService } from '../../common/products.service';
-import { SnackService } from '../../common/snack.service';
-import { AuthService } from '../../auth/auth.service';
-import { ProductsDialogComponent } from '../products-dialog/products-dialog.component';
+import { Component, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogConfig, MatSort, MatTableDataSource } from "@angular/material";
+
+import { Product } from "@models/product";
+import { ProductsService } from '@common/products.service';
+import { SnackService } from '@common/snack.service';
+import { AuthService } from '@auth/auth.service';
+import { ProductsDialogComponent } from '@admin/products-dialog/products-dialog.component';
 
 
 @Component({

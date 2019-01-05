@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from "../../models/product";
+import {Product} from "@models/product";
 import {Router} from "@angular/router";
-import {Order} from "../../models/order";
-import { AuthService } from '../../auth/auth.service';
-import { CartService } from '../../common/cart.service';
-import { SnackService } from '../../common/snack.service';
-import { AppService } from '../../common/app.service';
-import { OrdersService } from '../../common/orders.service';
+
+import {Order} from "@models/order";
+import { AuthService } from '@auth/auth.service';
+import { CartService } from '@common/cart.service';
+import { SnackService } from '@common/snack.service';
+import { AppService } from '@common/app.service';
+import { OrdersService } from '@common/orders.service';
 
 
 declare const moment: any;

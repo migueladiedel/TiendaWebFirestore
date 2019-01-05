@@ -6,7 +6,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 import * as firebase from "firebase";
-import {User} from "../models/user";
+import { User } from "../models/user";
 
 @Injectable()
 export class AuthService {

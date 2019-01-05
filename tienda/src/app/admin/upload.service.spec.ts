@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { UploadService } from './upload.service';
+import { UploadService } from '@admin/upload.service';
 
 describe('UploadService', () => {
   beforeEach(() => {

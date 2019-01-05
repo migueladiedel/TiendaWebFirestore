@@ -4,12 +4,12 @@ import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/combineLatest';
 
-import {Product} from "../../models/product";
-import { ProductsService } from '../../common/products.service';
-import { AuthService } from '../../auth/auth.service';
-import { CartService } from '../../common/cart.service';
-import { AppService } from '../../common/app.service';
-import { SnackService } from '../../common/snack.service';
+import {Product} from "@models/product";
+import { ProductsService } from '@common/products.service';
+import { AuthService } from '@auth/auth.service';
+import { CartService } from '@common/cart.service';
+import { AppService } from '@common/app.service';
+import { SnackService } from '@common/snack.service';
 
 @Component({
   selector: 'app-products',

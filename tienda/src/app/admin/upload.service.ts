@@ -1,8 +1,9 @@
-import {Injectable} from '@angular/core';
-import {Upload} from '../models/upload';
-import {AngularFirestore} from "angularfire2/firestore";
+import { Injectable } from '@angular/core';
+import { AngularFirestore } from "angularfire2/firestore";
 import * as faker from 'faker';
 import * as firebase from "firebase";
+
+import { Upload } from '@models/upload';
 
 @Injectable()
 export class UploadService {
@@ -11,8 +12,7 @@ export class UploadService {
 
   constructor(private afs: AngularFirestore,) {}
 
-  pushFileToStorage(fileUpload: Upload, progress: {percentage: number}, id: any)
-  {
+  pushFileToStorage(fileUpload: Upload, progress: {percentage: number}, id: any) {
     const storageRef = firebase.storage().ref();
     const fileId = faker.random.alphaNumeric(16);
     const uploadTask = storageRef.child(`${this.basePath}/${fileId}`).put(fileUpload.file);

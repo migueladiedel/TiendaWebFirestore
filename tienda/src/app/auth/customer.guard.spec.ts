@@ -1,6 +1,6 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 
-import { CustomerGuard } from './customer.guard';
+import { CustomerGuard } from '@auth/customer.guard';
 
 describe('CustomerGuard', () => {
   beforeEach(() => {

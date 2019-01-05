@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Upload} from "../../models/upload";
-import { ProductsService } from '../../common/products.service';
-import { AuthService } from '../../auth/auth.service';
-import { CartService } from '../../common/cart.service';
+import {Upload} from "@models/upload";
+import { ProductsService } from '@common/products.service';
+import { AuthService } from '@auth/auth.service';
+import { CartService } from '@common/cart.service';
 
 
 @Component({

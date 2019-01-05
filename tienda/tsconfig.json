@@ -18,10 +18,12 @@
     "baseUrl": "src",
     "paths": {
       "@auth/*": ["app/auth/*"],
+      "@models/*": ["app/models/*"],
       "@common/*": ["app/common/*"],
       "@admin/*": ["app/admin/*"],
       "@shared/*": ["app/shared/*"],
-      "@shop/*": ["app/shop/*"]
+      "@shop/*": ["app/shop/*"],
+      "@environments/*": ["environments/*"]
     }
   }
 }

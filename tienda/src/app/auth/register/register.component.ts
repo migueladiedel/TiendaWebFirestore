@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFirestore} from "angularfire2/firestore";
 import {Title} from "@angular/platform-browser";
 import {Router} from "@angular/router";
-import { AuthService } from '../auth.service';
-import { SnackService } from '../../common/snack.service';
-import { AppService } from '../../common/app.service';
+// Servicios
+import { AuthService } from '@auth/auth.service';
+import { SnackService } from '@common/snack.service';
+import { AppService } from '@common/app.service';
 
 
 @Component({

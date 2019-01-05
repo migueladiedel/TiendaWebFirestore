@@ -26,11 +26,12 @@ import {
   FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
-import { AppService } from '../common/app.service';
-import { SnackService } from '../common/snack.service';
-import { ProductsService } from '../common/products.service';
-import { CartService } from '../common/cart.service';
-import { OrdersService } from '../common/orders.service';
+
+import { AppService } from '@common/app.service';
+import { SnackService } from '@common/snack.service';
+import { ProductsService } from '@common/products.service';
+import { CartService } from '@common/cart.service';
+import { OrdersService } from '@common/orders.service';
 
 @NgModule({
   imports: [
