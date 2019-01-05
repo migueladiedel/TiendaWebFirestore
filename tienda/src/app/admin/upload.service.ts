@@ -10,7 +10,7 @@ export class UploadService {
 
   private basePath = '/products';
 
-  constructor(private afs: AngularFirestore,) {}
+  constructor(private afs: AngularFirestore) {}
 
   pushFileToStorage(fileUpload: Upload, progress: {percentage: number}, id: any) {
     const storageRef = firebase.storage().ref();

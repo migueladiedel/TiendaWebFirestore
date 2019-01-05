@@ -4,7 +4,7 @@ import * as faker from 'faker';
 import {Product} from "../models/product";
 
 
-import {Observable} from "rxjs/Observable";
+import { Observable } from "rxjs/Observable";
 import { fromPromise } from 'rxjs/observable/fromPromise';
 import { expand, takeWhile, mergeMap, take } from 'rxjs/operators';
 import { UploadService } from '../admin/upload.service';
