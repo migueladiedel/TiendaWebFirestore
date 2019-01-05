@@ -23,3 +23,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 `ng g guard auth/auth --module auth`
 
 `ng g module admin --routing`
+
+`ng g component admin/admin --m admin`
