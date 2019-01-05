@@ -33,3 +33,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 `ng g component admin/products --m admin`
 
 `ng g class models/upload`
+
+`ng g service admin/upload --m admin`
