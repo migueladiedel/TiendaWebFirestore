@@ -25,3 +25,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 `ng g module admin --routing`
 
 `ng g component admin/admin --m admin`
+
+`ng g service common/products --m shared`
