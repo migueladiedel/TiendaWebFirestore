@@ -50,4 +50,6 @@ Creamos la lógica de la orden que es cuando un pedido ha sido finalizado
 
 `ng g class models/order`
 `ng g component shop/cart --m shop`
+`ng g service common/orders --m shared`
+
 
