@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from "@models/product";
-import {Router} from "@angular/router";
+import { Product } from "@models/product";
+import { Router } from "@angular/router";
 
-import {Order} from "@models/order";
+import { Order } from "@models/order";
 import { AuthService } from '@auth/auth.service';
 import { CartService } from '@common/cart.service';
 import { SnackService } from '@common/snack.service';
 import { AppService } from '@common/app.service';
 import { OrdersService } from '@common/orders.service';
-
-
-declare const moment: any;
+// External Libraries
+import * as Moment from 'moment';
+import { extendMoment } from 'moment-range';
 
 @Component({
   selector: 'app-cart',
@@ -70,13 +70,14 @@ export class CartComponent implements OnInit {
   }
 
   processOrder() {
+    const moment = extendMoment(Moment);    
     let order: Order = {
       id: null,
       uid: this.uid,
       products: this.cart.products,
       amount: this.totalPrice,
       totalProducts: this.cart.totalProducts,
-      created_at: moment(new Date).format('DD/MM/YYYY')
+      created_at: moment().toDate() 
     };
 
     this.ordersService.save(order).then(() => {

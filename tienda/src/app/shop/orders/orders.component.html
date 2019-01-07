@@ -4,9 +4,7 @@
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
     </mat-form-field>
   </div>
-
   <mat-table #table [dataSource]="dataSource" matSort [trackBy]="trackById" class="animate">
-
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
       <mat-cell *matCellDef="let order"> {{ order.id }} </mat-cell>
@@ -14,15 +12,13 @@
 
     <ng-container matColumnDef="created_at">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </mat-header-cell>
-      <mat-cell *matCellDef="let order"> {{ order.created_at }} </mat-cell>
+      <mat-cell *matCellDef="let order"> {{ order.created_at  | date:'dd/MM/yyyy' }} </mat-cell>
     </ng-container>
-
 
     <ng-container matColumnDef="amount">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Importe pedido </mat-header-cell>
-      <mat-cell *matCellDef="let order"> {{ order.amount }}€ </mat-cell>
+      <mat-cell *matCellDef="let order"> {{ order.amount }} € </mat-cell>
     </ng-container>
-
 
     <ng-container matColumnDef="totalProducts">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Número de productos </mat-header-cell>
@@ -32,10 +28,9 @@
     <ng-container matColumnDef="detail">
       <mat-header-cell *matHeaderCellDef> Detalle </mat-header-cell>
       <mat-cell *matCellDef="let order">
-        <a mat-raised-button color="primary" routerLink="/orders/{{ order.id }}">Detalle</a>
+        <a mat-raised-button color="primary" routerLink="/order/{{ order.id }}">Detalle</a>        
       </mat-cell>
     </ng-container>
-
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
