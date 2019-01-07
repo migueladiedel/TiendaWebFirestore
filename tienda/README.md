@@ -55,3 +55,5 @@ Creamos la lógica de la orden que es cuando un pedido ha sido finalizado
 `ng g service common/orders --m shared`
 
 `ng g component shop/orders m shop`
+
+`ng g guard auth/customer --module auth`
