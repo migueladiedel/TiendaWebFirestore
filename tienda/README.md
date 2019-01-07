@@ -46,6 +46,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 `ng g component shop/products --m shop`
 
-Componenete para mostrar el detalle del producto
+Creamos la lógica de la orden que es cuando un pedido ha sido finalizado
 
-`ng g component shop/detail --m shop`
+`ng g class models/order`
+`ng g component shop/cart --m shop`
+
